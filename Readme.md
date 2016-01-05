@@ -2,7 +2,7 @@
 
 ### ScreenShot
 
-[ScreenShot](https://raw.githubusercontent.com/TimBao/TBSpringBoard/master/ScreenShot/screenshot.gif)
+![ScreenShot](https://raw.githubusercontent.com/TimBao/TBSpringBoard/master/ScreenShot/screenshot.gif)
 
 ### Dependence
 
