@@ -1,4 +1,6 @@
-### This is simulate the iOS spring board. It's base on [**LxGridView**](https://github.com/DeveloperLx/LxGridView.git)
+### This is simulate the iOS SpringBoard. It's base on [**LxGridView**](https://github.com/DeveloperLx/LxGridView.git)
+
+It's use collection view to implement the SpringBoard view. Could be drag and drop the cell.
 
 ### ScreenShot
 
