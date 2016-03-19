@@ -104,7 +104,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  s.resource  = "TBSpringboard/Assets.xcassets/SpringBoard/**/*.png"
+  s.resource  = "TBSpringBoard/Assets.xcassets/SpringBoard/**/*.png"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
