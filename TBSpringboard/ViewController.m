@@ -14,7 +14,7 @@
 
 #import "Masonry.h"
 
-@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, TBCollectionViewFlowLayoutDataSource, TBCollectionViewCellDelegate>
+@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, TBCollectionViewFlowLayoutDataSource, TBCollectionViewCellDelegate, TBPopupFolderViewDelegate>
 
 @property (nonatomic, strong) TBSpringBoardView          *springBoardView;
 @property (nonatomic, strong) TBPopupFolderView          *popupFolderView;
@@ -62,6 +62,7 @@
     }];
     
     _popupFolderView = [[TBPopupFolderView alloc] init];
+    _popupFolderView.delegate = self;
     _popupFolderView.backgroundColor = [UIColor whiteColor];
     _popupFolderView.userInteractionEnabled = YES;
     _popupFolderView.collectionView.delegate = self;
@@ -236,6 +237,14 @@
     NSInteger index = self.allBoards.count;
     [self.allBoards insertObject:data atIndex:index];
     [_springBoardView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:(self.allBoards.count-1) inSection:0]]];
+}
+
+- (void)folderNameChanged:(NSString *)name indexPath:(NSIndexPath *)indexPath
+{
+    TBCollectionViewCell *folderCell = (TBCollectionViewCell *)[_springBoardView cellForItemAtIndexPath:indexPath];
+    if (folderCell) {
+        folderCell.title = name;
+    }
 }
 
 @end

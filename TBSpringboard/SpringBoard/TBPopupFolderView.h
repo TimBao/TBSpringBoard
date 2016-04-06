@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TBPopupFolderViewDelegate <NSObject>
+
+- (void)folderNameChanged:(NSString *)name indexPath:(NSIndexPath *)indexPath;
+
+@end
+
 static NSString* DequeueReusableCell = @"TBSpringBoardCellReuseIdentifier";
 
 @class TBSpringBoardView;
 @interface TBPopupFolderView : UIView
 
+@property (nonatomic, weak  ) id<TBPopupFolderViewDelegate> delegate;
 @property (nonatomic, strong) NSMutableArray    *dataSource;
 @property (nonatomic, strong) UITextField       *nameField;
 @property (nonatomic, strong) TBSpringBoardView *collectionView;

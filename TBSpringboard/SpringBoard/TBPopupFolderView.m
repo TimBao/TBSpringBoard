@@ -81,6 +81,7 @@
 
 - (void)onBackgroundTap:(id)sender
 {
+    [_nameField resignFirstResponder];
     self.hidden = YES;
 }
 
@@ -99,7 +100,9 @@
 #pragma mark - TextFiledDelegate
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-//TODO: folder name changed
+    if (self.delegate && [self.delegate respondsToSelector:@selector(folderNameChanged:indexPath:)]) {
+        [self.delegate folderNameChanged:textField.text indexPath:self.dataSourceItemPath];
+    }
 }
 
 
