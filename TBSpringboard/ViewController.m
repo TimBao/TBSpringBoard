@@ -239,6 +239,8 @@
     [_springBoardView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:(self.allBoards.count-1) inSection:0]]];
 }
 
+#pragma mark -
+#pragma TBPopupFolderViewDelegate
 - (void)folderNameChanged:(NSString *)name indexPath:(NSIndexPath *)indexPath
 {
     TBCollectionViewCell *folderCell = (TBCollectionViewCell *)[_springBoardView cellForItemAtIndexPath:indexPath];
